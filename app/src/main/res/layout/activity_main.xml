@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:onClick="turnOn"
+        android:onClick="turnOff"
         android:layout_marginTop="43dp"
         android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button2"
@@ -103,5 +103,6 @@
         android:layout_alignLeft="@+id/button4"
         android:layout_alignStart="@+id/button4"
         android:layout_marginLeft="73dp"
-        android:layout_marginStart="73dp" />
+        android:layout_marginStart="73dp"
+        />
 </RelativeLayout>

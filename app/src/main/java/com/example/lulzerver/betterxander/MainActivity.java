@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public void sendRequest(String state)  {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://requestb.in/1malqqd1";
+        String url = "http://requestb.in/1876nlo1";
 
         //define json object
         JSONObject jsonBody = new JSONObject();
