@@ -41,26 +41,26 @@ public class MainActivity extends AppCompatActivity {
      * Turn light one and two off
      */
     public void turnLightOneOff(View view) {
-        sendRequest("off");
+        sendRequest("light1", "off");
     }
 
     public void turnLightTwoOff(View view) {
-        sendRequest("off");
+        sendRequest("light1", "off");
     }
 
     /**
      * Turn light one and two on
      */
     public void turnLightOneOn(View view) {
-        sendRequest("on");
+        sendRequest("light2", "on");
     }
     public void turnLightTwoOn(View view) {
-        sendRequest("on");
+        sendRequest("light2", "on");
     }
 
 
-    public void sendRequest(String state)  {
-        // Instantiate the RequestQueue.
+    public void sendRequest(String light, String state)  {
+        // Instdo antiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://requestb.in/1876nlo1";
 
