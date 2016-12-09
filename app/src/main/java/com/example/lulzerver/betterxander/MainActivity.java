@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //define json object
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("state", state);
+            jsonBody.put(light, state);
         } catch (JSONException e) {
             System.out.println("YOU HAVE INCORRECT JSON");
         }
