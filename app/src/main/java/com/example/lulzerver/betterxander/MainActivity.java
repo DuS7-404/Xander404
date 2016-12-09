@@ -1,6 +1,7 @@
 package com.example.lulzerver.betterxander;
 
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,10 +12,14 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     TextView txt;
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void turnLightTwoOff(View view) {
-        sendRequest("light1", "off");
+        sendRequest("light2", "off");
     }
 
     /**
@@ -54,40 +59,44 @@ public class MainActivity extends AppCompatActivity {
     public void turnLightOneOn(View view) {
         sendRequest("light1", "on");
     }
+
     public void turnLightTwoOn(View view) {
         sendRequest("light2", "on");
     }
 
 
-    public void sendRequest(String light, String state)  {
-        // Instdo antiate the RequestQueue.
+    public void sendRequest(final String light, final String state) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://requestb.in/1876nlo1";
+        String url = "http://ec2-54-164-53-99.compute-1.amazonaws.com:6543";
 
-        //define json object
-        JSONObject jsonBody = new JSONObject();
-        try {
-            jsonBody.put(light, state);
-        } catch (JSONException e) {
-            System.out.println("YOU HAVE INCORRECT JSON");
-        }
-
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.POST, url, jsonBody, new Response.Listener<JSONObject>() {
-
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
                     }
-                }, new Response.ErrorListener() {
-
+                },
+                new Response.ErrorListener()
+                {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
+                        // error
 
                     }
-                });
-// Add the request to the RequestQueue.
-        queue.add(jsObjRequest);
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put(light, state);
+
+                return params;
+            }
+        };
+        queue.add(postRequest);
     }
 
 
