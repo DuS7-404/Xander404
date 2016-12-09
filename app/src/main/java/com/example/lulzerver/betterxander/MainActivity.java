@@ -38,18 +38,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Turn a light off
+     * Turn light one and two off
      */
-    public void turnOff(View view) {
+    public void turnLightOneOff(View view) {
+        sendRequest("off");
+    }
+
+    public void turnLightTwoOff(View view) {
         sendRequest("off");
     }
 
     /**
-     * Turn a light on
+     * Turn light one and two on
      */
-    public void turnOn(View view) {
+    public void turnLightOneOn(View view) {
         sendRequest("on");
     }
+    public void turnLightTwoOn(View view) {
+        sendRequest("on");
+    }
+
 
     public void sendRequest(String state)  {
         // Instantiate the RequestQueue.

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:id="@+id/button2"
-        android:onClick="turnOff"
+        android:onClick="turnLightOneOff"
         android:layout_below="@+id/button"
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button3"
-        android:onClick="turnOff"
+        android:onClick="turnLightTwoOff"
         android:layout_marginTop="43dp"
         android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button2"
@@ -54,7 +54,7 @@
         android:layout_alignBottom="@+id/button2"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:onClick="turnOn"/>
+        android:onClick="turnLightOneOn"/>
 
     <Button
         android:text="ON"
@@ -64,7 +64,7 @@
         android:layout_above="@+id/textView2"
         android:layout_alignLeft="@+id/button4"
         android:layout_alignStart="@+id/button4"
-        android:onClick="turnOn"/>
+        android:onClick="turnLightTwoOn"/>
 
     <ImageView
         android:layout_height="60dp"
