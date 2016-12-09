@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * Turn light one and two on
      */
     public void turnLightOneOn(View view) {
-        sendRequest("light2", "on");
+        sendRequest("light1", "on");
     }
     public void turnLightTwoOn(View view) {
         sendRequest("light2", "on");
