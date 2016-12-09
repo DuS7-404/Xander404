@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/xander_logo"
     tools:context="com.example.lulzerver.betterxander.MainActivity">
 
     <TextView
@@ -18,47 +20,88 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:text="Button"
+        android:text="OFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="37dp"
-        android:id="@+id/button"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:text="ON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="11dp"
         android:id="@+id/button2"
+        android:onClick="turnOff"
         android:layout_below="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:onClick="turnOn"/>
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
 
     <Button
         android:text="OFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:id="@+id/button3"
+        android:onClick="turnOn"
+        android:layout_marginTop="43dp"
         android:layout_below="@+id/button2"
         android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:onClick="turnOff"/>
+        android:layout_alignStart="@+id/button2" />
+
+    <Button
+        android:text="ON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_marginLeft="53dp"
+        android:layout_marginStart="53dp"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:onClick="turnOn"/>
+
+    <Button
+        android:text="ON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:onClick="turnOn"/>
+
+    <ImageView
+        android:layout_height="60dp"
+        app:srcCompat="@mipmap/blue_power"
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@mipmap/blue_power"
+        android:id="@+id/imageView2"
+        android:layout_alignTop="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This will change because I am incorporating technology from the 4th dimension,press the first button to speak with them."
         android:id="@+id/textView2"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/button3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:layout_marginLeft="73dp"
+        android:layout_marginStart="73dp" />
 </RelativeLayout>
